@@ -47,20 +47,9 @@ model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_s
 scores = model.evaluate(X_test, y_test, verbose=0)
 print("Baseline Error: %.2f%%" % (100-scores[1]*100))
 
-img_pred = cv2.imread ( 'test2.png' ,   0 )
-# forces the image to have the input dimensions equal to those used in the training data (28x28)
-if img_pred.shape != [ 28 , 28 ]:
-    img2 = cv2.resize ( img_pred, ( 28 , 28 ) )
-    img_pred = img2.reshape ( 28 , 28 , - 1 ) ;
-else :
-    img_pred = img_pred.reshape ( 28 , 28 , - 1 ) ;
-    
-# here also we inform the value for the depth = 1, number of rows and columns, which correspond 28x28 of the image.
-img_pred = img_pred.reshape ( 1 , 1 , 28 , 28 )
-pred = model.predict_classes ( img_pred )
-pred_proba = model.predict_proba ( img_pred )
-pred_proba = "% .2f %%" % (pred_proba [0] [pred] * 100) 
-print ( pred [ 0 ] , "with probability of" , pred_proba )
+
+
+
 
 
 
