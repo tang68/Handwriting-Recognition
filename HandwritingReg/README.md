@@ -9,6 +9,7 @@ To install Anaconda and OpenCV https://www.anaconda.com/download/#macos, then
 	
 Install jupyter 
 		$ python -m pip install jupyter OR python3 -m pip install jupyter
+	
 	start connection 
 		$ jupyter notebook
 
